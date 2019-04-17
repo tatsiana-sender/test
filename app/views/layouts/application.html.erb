@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-lignt fixed-top">
+
+      <ul class="navbar-nav container col-4 d-flex justify-content-center">
+        <li class="nav-item">
+          <span class="nav-link"><%= link_to "All projects", home_path, :class => 'btn btn-dark' %></span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link"><%= link_to "Add project", new_project_path, :class => 'btn btn-dark' %></span>
+        </li>              
+      </ul>
+  </nav>
+
+  <%= yield %>
+
+  </body>
+</html>

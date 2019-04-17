@@ -1,0 +1,32 @@
+<h2>Add new project</h2>
+<div class="container">
+  <%= form_for :project, url: projects_path do |f| %>
+    <% if @project.errors.any? %>
+      <% @project.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger">
+        <%= msg %>
+      </div>
+      <% end %>
+    <% end %>
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <p><%= f.text_field(:title, {:class => 'form-control'}) %></p>
+    </div>
+    <div class="form-group">
+      <label for="text">Summary:</label>
+      <p><%= f.text_area(:text, {:class => 'form-control'}) %></p>
+    </div>
+  </div>
+  <div class="col-md-2 align-content-between">
+    <div class="form-group">
+      <label for="date">Date of finish:</label>
+      <p><input type="date" <%= f.text_field(:date, {:class => 'form-control'}) %></p>
+      <%= f.submit "Add project", :class => 'btn btn-success' %>
+    </div>    
+  </div>
+</div>
+    <% end %>
+</div>
